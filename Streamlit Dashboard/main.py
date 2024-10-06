@@ -106,12 +106,12 @@ while True:
         build_dashboard_layout()
 
     # If parameters are selected, display the charts
-    # if parameter1 and parameter2:
-    #     df = queue.get(conid)  # Make sure this is non-blocking or handled in a separate thread
-        # with placeholder_col1:
-        # #     st.line_chart(df, x="datetime", y=[parameter1], height=300)
-        # with placeholder_col2:
-        #     st.line_chart(df, x="datetime", y=[parameter2], height=300)
-        # with placeholder_raw:
-        #     st.markdown("### Raw Data View")
-        #     st.dataframe(df)
+    if parameter1 and parameter2:
+        df = queue.get(conid)  # Make sure this is non-blocking or handled in a separate thread
+        with placeholder_col1:
+            st.line_chart(df, x="datetime", y=[parameter1], height=300)
+        with placeholder_col2:
+            st.line_chart(df, x="datetime", y=[parameter2], height=300)
+        with placeholder_raw:
+            st.markdown("### Raw Data View")
+            st.dataframe(df)
